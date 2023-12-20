@@ -1,0 +1,27 @@
+version: "3.9"
+services:
+  postgres:
+    image: postgres:13.3
+    environment:
+      POSTGRES_DB: "test"
+      POSTGRES_USER: "testuser"
+      POSTGRES_PASSWORD: "testpass"
+    ports:
+      - "5432:5432"
+  postgres-second:
+    image: postgres:13.3
+    environment:
+      POSTGRES_DB: "test2"
+      POSTGRES_USER: "testuser2"
+      POSTGRES_PASSWORD: "testpass2"
+    ports:
+      - "5433:5432"
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_DATABASE: "test3"
+      MYSQL_USER: "testuser3"
+      MYSQL_PASSWORD: "testpass3"
+      MYSQL_ROOT_PASSWORD: "rootpass"
+    ports:
+      - "3306:3306"

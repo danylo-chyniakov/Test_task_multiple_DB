@@ -1,0 +1,39 @@
+data-sources:
+  - name: data-base-1
+    strategy: postgres
+    url: jdbc:postgresql://localhost:5432/test
+    table: users
+    user: testuser
+    password: testpass
+    mapping:
+      id: user_id
+      username: login
+      name: first_name
+      surname: last_name
+  - name: data-base-2
+    strategy: postgres
+    url: jdbc:postgresql://localhost:5433/test2
+    table: users2
+    user: testuser2
+    password: testpass2
+    mapping:
+      id: user_id2
+      username: login2
+      name: first_name2
+      surname: last_name2
+  - name: data-base-3
+    strategy: mysql
+    url: jdbc:mysql://localhost:3306/test3
+    table: users3
+    user: testuser3
+    password: testpass3
+    mapping:
+      id: user_id3
+      username: login3
+      name: first_name3
+      surname: last_name3
+
+
+spring:
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration, org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration
