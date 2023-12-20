@@ -1,6 +1,5 @@
 package com.example.demo;
 
-import com.example.demo.model.UserEntity;
 import com.example.demo.openapi.model.UserDto;
 import com.example.demo.service.UserService;
 import com.example.demo.web.UsersController;
